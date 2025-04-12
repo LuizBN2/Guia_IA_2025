@@ -1,0 +1,13 @@
+[theme]
+base="light"
+
+[server]
+runOnSave = true
+
+[client]
+showSidebarNavigation = false
+
+
+[ui]
+hideSidebarNav = false
+sidebarState = "expanded"
