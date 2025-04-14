@@ -1,0 +1,25 @@
+digraph G {
+    rankdir=TB;
+    concentrate=true;
+    dpi=200;
+    splines=ortho;
+    node [shape=plaintext fontname=Helvetica];
+
+    layer_0 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#dcedc8">
+  <TR><TD COLSPAN="2"><B>embedding</B> (Embedding)</TD></TR>
+  <TR><TD><FONT POINT-SIZE="10">Input</FONT></TD><TD><FONT POINT-SIZE="10">(None, 40)</FONT></TD></TR>
+  <TR><TD><FONT POINT-SIZE="10">Output</FONT></TD><TD><FONT POINT-SIZE="10">(None, 40, 128)</FONT></TD></TR>
+</TABLE>>];
+    layer_1 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#eeeeee">
+  <TR><TD COLSPAN="2"><B>bidirectional</B> (Bidirectional)</TD></TR>
+  <TR><TD><FONT POINT-SIZE="10">Input</FONT></TD><TD><FONT POINT-SIZE="10">(None, 40, 128)</FONT></TD></TR>
+  <TR><TD><FONT POINT-SIZE="10">Output</FONT></TD><TD><FONT POINT-SIZE="10">(None, 128)</FONT></TD></TR>
+</TABLE>>];
+    layer_2 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#bbdefb">
+  <TR><TD COLSPAN="2"><B>dense</B> (Dense)</TD></TR>
+  <TR><TD><FONT POINT-SIZE="10">Input</FONT></TD><TD><FONT POINT-SIZE="10">(None, 128)</FONT></TD></TR>
+  <TR><TD><FONT POINT-SIZE="10">Output</FONT></TD><TD><FONT POINT-SIZE="10">(None, 1)</FONT></TD></TR>
+</TABLE>>];
+    layer_0 -> layer_1;
+    layer_1 -> layer_2;
+}
