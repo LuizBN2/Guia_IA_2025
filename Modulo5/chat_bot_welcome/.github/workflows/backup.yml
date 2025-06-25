@@ -1,0 +1,21 @@
+name: Backup Chatbot
+
+on:
+  push:
+    paths:
+      - conocimiento.json
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Commit y push de cambios si los hay
+        run: |
+          git config user.name "chatbot-bot"
+          git config user.email "bot@example.com"
+          git add conocimiento.json
+          git diff --cached --quiet || git commit -m "🧠 Backup automático del chatbot"
+          git push
